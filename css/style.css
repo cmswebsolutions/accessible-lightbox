@@ -1,0 +1,170 @@
+#lightbox {
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: black;
+  background: rgba(0, 0, 0, 0.85); }
+  #lightbox .loading {
+    position: fixed;
+    top: 40%;
+    left: 0;
+    color: white;
+    z-index: 3;
+    font-size: 2.5em;
+    padding: 0.5em;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.1s;
+    pointer-events: none; }
+  #lightbox.changing #img-box, #lightbox.changing #prev, #lightbox.changing #next {
+    opacity: 0 !important; }
+  #lightbox.changing .loading {
+    opacity: 1; }
+  #lightbox button {
+    pointer-events: none; }
+  #lightbox.active {
+    height: 100%;
+    opacity: 1;
+    pointer-events: auto; }
+    #lightbox.active button {
+      pointer-events: auto; }
+  #lightbox .image {
+    text-align: center;
+    height: 100%; }
+    #lightbox .image #img-box {
+      display: inline-block;
+      max-width: 98%;
+      max-height: 80%;
+      width: auto;
+      height: auto;
+      vertical-align: middle;
+      position: relative;
+      opacity: 1;
+      transition: opacity 0.2s; }
+      #lightbox .image #img-box #photo {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        width: auto;
+        box-shadow: 0 0 1em rgba(0, 0, 0, 0.8);
+        pointer-events: none; }
+      #lightbox .image #img-box .caption {
+        text-align: left;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 0.5em;
+        background: black;
+        background: rgba(0, 0, 0, 0.8);
+        color: white; }
+    #lightbox .image #next, #lightbox .image #prev {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 50%;
+      background: none;
+      text-align: left;
+      border: none;
+      outline: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      cursor: pointer; }
+      #lightbox .image #next:hover, #lightbox .image #next:focus, #lightbox .image #prev:hover, #lightbox .image #prev:focus {
+        opacity: 1; }
+      #lightbox .image #next img, #lightbox .image #prev img {
+        width: 5em;
+        height: auto; }
+    #lightbox .image #next {
+      left: 50%;
+      text-align: right; }
+    #lightbox .image #close {
+      font-family: "Open Sans", Helvetica, sans, sans-serif;
+      padding: 0.25em 1em;
+      font-size: 100%;
+      position: absolute;
+      top: 1.5em;
+      right: 1em;
+      background: black;
+      background: transparent;
+      color: white;
+      border: 1px solid white;
+      border-radius: 2px;
+      cursor: pointer; }
+      #lightbox .image #close:hover, #lightbox .image #close:focus {
+        background: white;
+        color: black; }
+    #lightbox .image .height {
+      vertical-align: middle;
+      display: inline-block;
+      height: 100%;
+      width: 0.001%; }
+
+@media screen and (max-width: 975px) {
+  body > .band {
+    position: static; }
+
+  header, #main {
+    position: static;
+    display: block;
+    width: 100%;
+    float: none;
+    padding-left: 1em;
+    padding-right: 1em; }
+
+  header.sticky {
+    position: static; }
+  header #search form, header nav ul {
+    padding: 0; }
+
+  #main {
+    padding-top: 2em;
+    clear: both; }
+    #main #content {
+      padding-bottom: 1em; }
+
+  footer {
+    position: static;
+    text-align: center; }
+    footer p, footer ul {
+      float: none;
+      width: 100%;
+      padding: 0.25em !important;
+      margin: 0; }
+
+  #lightbox {
+    font-size: 2vw; }
+    #lightbox .image #close {
+      top: 0.5em;
+      right: 0.5em; }
+    #lightbox .image #next, #lightbox .image #prev {
+      opacity: 0.8; }
+      #lightbox .image #next img, #lightbox .image #prev img {
+        width: 3em; } }
+@media screen and (max-width: 975px) {
+  #lightbox {
+    font-size: 2vw; }
+    #lightbox .image #close {
+      top: 0.5em;
+      right: 0.5em; }
+    #lightbox .image #next, #lightbox .image #prev {
+      opacity: 0.8; }
+      #lightbox .image #next img, #lightbox .image #prev img {
+        width: 3em; } }
+@media screen and (max-width: 550px) {
+  #lightbox {
+    font-size: 3.5vw; }
+    #lightbox .image #img-box .caption {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 150%; } }
